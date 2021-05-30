@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap');
+.container {
+  margin: 10% 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  overflow: auto;
+}
+
+.top_bar {
+  padding: 1% 5% 1% 10px;
+  display: flex;
+  height: 50px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background: #eeeeee;
+}
+.profile_picture {
+  margin-right: 5px;
+}
+.picture {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
+  font-size: 0.9em;
+  font-weight: 600;
+}
+.date {
+  font-size: 0.7em;
+}
+
+.copy {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+}
+.categories {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.8em;
+}
+.category {
+  padding: 2px 10px;
+  margin: 5px; 
+  text-align: center;
+  border-radius: 50px;
+  background-color: #dddddd;
+}
+.content {
+  margin-top: 5px;
+  padding: 0 10px;
+  font-weight: 300;
+  font-size: 1.1em;
+  line-height: 1.5;
+  padding-bottom: 10px;
+  }
+
+.bottom {
+  position: sticky;
+  bottom: 0;
+  background: #eeeeee;
+  display: flex;
+  justify-content: space-between;
+}
+.reactions {
+    align-items: center;
+    padding-left: 10px;
+    width: 200px;
+    font-size: 1.3em;
+    display: flex;
+    justify-content: space-between;
+
+    
+  }
+.reaction {
+    cursor: pointer;
+    filter: grayscale(100%);
+    opacity: 0.9;
+    padding: 5px 10px;
+    text-align: center;
+    }
+    .reaction:hover {
+    transform: scale(1.2) !important;
+    cursor: pointer;
+      opacity: 0.9;
+      filter: grayscale(0%);
+      /** background: #ddebf8 !important;
+       */
+
+      
+    }
+    .selected {
+      opacity: 1;
+      filter: grayscale(0%);
+      background-color: #f7f8fa;
+padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+
+    }
+
+
+.navigation {
+  flex:1;
+  display: flex;
+  justify-content:space-around; 
+  align-items: center;
+
+}
+@media screen and (max-width: 600px) {
+.container {
+  height: max-content;
+  max-height: 100vw;
+  margin: 50% 0;
+  }  
+.content{
+font-size: 0.9em;
+  line-height: 1.333;
+
+}
+.picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.reactions{
+  font-size: 1em;
+}
+}
