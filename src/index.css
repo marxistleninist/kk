@@ -2,8 +2,7 @@ html {
   background: #007d8a;
 }
 body {
-  margin: 0 25%;
-  background: white;
+  margin: 0;
 
   
 }
@@ -12,4 +11,17 @@ body {
     margin: 0 0;
 
   }
+}
+.debates-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.debates-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3); 
+    border-radius: 5px;
+}
+
+.debates-list::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }

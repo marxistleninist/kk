@@ -62,56 +62,58 @@ function Post() {
   }
   const [copied, setCopied] = useState(true)
   return (
-    <div className="container">
-      <div className="top_bar">
-        <div className="profile_picture">
-          <img src={DP} alt="profile_picture" className="picture" />
-        </div>
-        <div className="details">
-          <div className="name">
-            Kavita Krishnapallavi
+    <div className="body">
+      <div className="container">
+        <div className="top_bar">
+          <div className="profile_picture">
+            <img src={DP} alt="profile_picture" className="picture" />
           </div>
-          <div className="date">
-            {data.data[current].date}
+          <div className="details">
+            <div className="name">
+              Kavita Krishnapallavi
           </div>
+            <div className="date">
+              {data.data[current].date}
+            </div>
 
-        </div>
-        <div className="copy">
-          <CopyToClipboard text={data.data[current].content}
-            onCopy={handleClick}>
-            <IconButton>
-              <FileCopyIcon />
-            </IconButton>
+          </div>
+          <div className="copy">
+            <CopyToClipboard text={data.data[current].content}
+              onCopy={handleClick}>
+              <IconButton>
+                <FileCopyIcon />
+              </IconButton>
 
-          </CopyToClipboard>
-          <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{vertical: 'top', horizontal: 'center'}}>
-            <Alert onClose={handleClose} severity="success">
-              Content copied to clipboard!
+            </CopyToClipboard>
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{vertical: 'top', horizontal: 'center'}}>
+              <Alert onClose={handleClose} severity="success">
+                Content copied to clipboard!
         </Alert>
-          </Snackbar>
+            </Snackbar>
+          </div>
         </div>
-      </div>
-      <div className="content">
-        <div className="categories">{data.data[current].category.split(',').map((cat) => (<div className="category">{category[`${cat}`]}</div>))}</div>
-        {data.data[current].content}
-      </div>
-      <div className="bottom">
-        <div className="reactions">
-          <div className="reaction" onClick={() => sendMessage('👍', data.data[current].link)}>👍</div>
-          <div className="reaction" onClick={() => sendMessage('👎', data.data[current].link)}>👎</div>
-          <div className="reaction" onClick={() => sendMessage('❤', data.data[current].link)}>❤</div>
-          <div className="reaction" onClick={() => sendMessage('🤔', data.data[current].link)}>🤔</div>
+        <div className="content">
+          <div className="categories">{data.data[current].category.split(',').map((cat) => (<div className="category">{category[`${cat}`]}</div>))}</div>
+          {data.data[current].content}
         </div>
-        <div className="navigation">
-          <IconButton onClick={() => current > 0 ? setCurrent(current - 1) : false}>
-            <ChevronLeftIcon />
-          </IconButton>
-          <IconButton onClick={() => setCurrent(Math.floor(Math.random() * data.data.length))}>
-            <ShuffleIcon />
-          </IconButton>
-          <IconButton onClick={() => current < data.data.length - 1 ? setCurrent(current + 1) : false}>
-            <ChevronRightIcon />
-          </IconButton>
+        <div className="bottom">
+          <div className="reactions">
+            <div className="reaction" onClick={() => sendMessage('👍', data.data[current].link)}>👍</div>
+            <div className="reaction" onClick={() => sendMessage('👎', data.data[current].link)}>👎</div>
+            <div className="reaction" onClick={() => sendMessage('❤', data.data[current].link)}>❤</div>
+            <div className="reaction" onClick={() => sendMessage('🤔', data.data[current].link)}>🤔</div>
+          </div>
+          <div className="navigation">
+            <IconButton onClick={() => current > 0 ? setCurrent(current - 1) : false}>
+              <ChevronLeftIcon />
+            </IconButton>
+            <IconButton onClick={() => setCurrent(Math.floor(Math.random() * data.data.length))}>
+              <ShuffleIcon />
+            </IconButton>
+            <IconButton onClick={() => current < data.data.length - 1 ? setCurrent(current + 1) : false}>
+              <ChevronRightIcon />
+            </IconButton>
+          </div>
         </div>
       </div>
     </div>

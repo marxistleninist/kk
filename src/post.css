@@ -1,11 +1,13 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap');
 .container {
-  margin: 10% 0;
+  margin: 10% 25%;
   display: flex;
   flex-direction: column;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   overflow: auto;
+  background: white;
 }
 
 .top_bar {
